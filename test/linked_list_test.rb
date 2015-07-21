@@ -8,27 +8,38 @@ require '../lib/node'
 
 class NodeTest < Minitest::Test
 
-  def test_it_can_push
-    linkedlist = LinkedList.new(1)
-    assert_equal Node, linkedlist.head.class
+
+  def test_empty_list_can_append_a_node
+    list = LinkedList.new
+    node = Node.new("data")
+    list.append(node)
+    assert_equal node, list.head
   end
 
-  def test_next_node_is_nil
-    linkedlist = LinkedList.new(1)
-    assert_equal nil, linkedlist.head.next_node
+  def test_list_with_one_node_can_append_second_node
+    list = LinkedList.new
+    node = Node.new("data")
+    node2 = Node.new("data2")
+    list.append(node)
+    list.append(node2)
+    assert_equal node2, list.head.next_node
+
   end
 
-  def test_it_can_push_to_a_second_node
-    linkedlist = LinkedList.new(1)
-    linkedlist.append(2)
-    assert_equal 2, linkedlist.head.next_node.data
+  def test_list_with_one_node_can_append_second_and_third_node
+    list = LinkedList.new
+    node = Node.new("data")
+    node2 = Node.new("data2")
+    node3 = Node.new("data3")
+    list.append(node)
+    list.append(node2)
+    list.append(node3)
+    assert_equal node3, list.head.next_node.next_node
   end
 
-  def test_it_can_push_to_a_third_node
-    linkedlist = LinkedList.new(1)
-    linkedlist.append(3)
-    assert_equal 3, linkedlist.head.next_node.next_node.data
-  end
+  def test_list_
+
+
 
 
 end
