@@ -21,29 +21,42 @@ attr_accessor :head, :data
     end
   end
 
-  def prepend
-
+  def prepend(node)
+    node.next_node = @head
+    @head = node
   end
 
 
-  def insert
+  def insert(new_node, position)
+#If List only has one node - do prepend
+    if @head.next_node == nil
 
 
+
+
+    before = @head
+    (position-1).times {before = before.next_node}
+    after = before.next_node
+
+    before.next_node = new_node
+    new_node.next_node = after
   end
 
 
-  def count
+  def includes?(data)
+    #What I am looking at
+    current = @head
 
+    until current.data == data || current.data == nil
+      current = current.next_node
+    end
 
+    data == current.data
   end
-
-
-
 end
 
-# prepend an element at the beginning of the list
-# insert an element at an arbitrary position in the list
-# includes? gives back true or false whether the supplied value is in the list
+
+# includes? gives back true or false if the supplied value is in the list
 # pop an element from the end of the list
 # count the number of elements in the list
 # return the head value at the beginning of the list
