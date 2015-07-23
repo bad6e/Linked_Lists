@@ -276,7 +276,6 @@ class NodeTest < Minitest::Test
 
   #'REMOVE_BY_VALUE' TESTS
   def test_removes_the_first_occurrence_of_a_specificed_value
-    skip
     list = LinkedList.new
     list.append("A")
     list.append("B")
@@ -284,6 +283,41 @@ class NodeTest < Minitest::Test
     list.append("D")
     list.remove_by_value("B")
     assert_equal "C", list.head.next_node.data
+  end
+
+  def test_removes_the_first_occurrence_of_a_specificed_value_at_the_beginning_of_a_list
+    list = LinkedList.new
+    list.append("A")
+    list.append("B")
+    list.append("C")
+    list.append("D")
+    list.remove_by_value("A")
+    assert_equal "B", list.head.data
+  end
+
+  def test_removes_the_first_occurrence_of_a_specificed_value_at_the_middle_of_a_list
+    list = LinkedList.new
+    list.append("A")
+    list.append("B")
+    list.append("C")
+    list.append("D")
+    list.remove_by_value("C")
+    assert_equal "D", list.head.next_node.next_node.data
+  end
+
+  def test_removes_the_first_occurrence_of_a_specificed_value_at_the_end_of_a_list
+    list = LinkedList.new
+    list.append("A")
+    list.append("B")
+    list.append("C")
+    list.append("D")
+    list.remove_by_value("D")
+    assert_equal "C", list.head.next_node.next_node.data
+  end
+
+  def test_does_not_remove_the_first_occurrence_of_a_specificed_value_in_an_empty_list
+    list = LinkedList.new
+    assert_equal false, list.remove_by_value("D")
   end
 end
 

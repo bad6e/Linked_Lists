@@ -142,18 +142,13 @@ attr_accessor :head, :data
     end
   end
 
-  def remove_by_value
-    current = @head
-    counter = 0
-    if @head != nil
-      counter += 1
+  def remove_by_value(data_find)
+    if @head == nil
+      return false
     end
+    index = find_by_value(data_find)
+    remove_by_index(index-1)
   end
-
-
-
-
-
 end
 
 
@@ -167,5 +162,4 @@ end
 
 
 
-# remove_by_value removes the first occurrence of the specified value
 
