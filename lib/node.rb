@@ -6,9 +6,5 @@ class Node
     @data = data
     @next_node = nil
   end
-
-  def tail?
-    @data.next_node == nil
-  end
 end
 
