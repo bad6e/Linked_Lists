@@ -226,17 +226,64 @@ class NodeTest < Minitest::Test
     list = LinkedList.new
     assert_equal false, list.find_by_value("A")
   end
-end
 
-#   #'REMOVE BY INDEX' TESTS
-#   def test_removes_the_value_at_a_specificied_index
-#     list = LinkedList.new
-#     list.append("A")
-#     list.append("B")
-#     list.append("C")
-#     list.append("D")
-#     list.remove_by_index(1)
-#     assert_equal "D", list.head.next_node.next_node.data
-#   end
-# end
+
+  #'REMOVE BY INDEX' TESTS
+  def test_removes_the_value_at_a_specificied_index
+    list = LinkedList.new
+    list.append("A")
+    list.append("B")
+    list.append("C")
+    list.append("D")
+    list.remove_by_index(1)
+    assert_equal "D", list.head.next_node.next_node.data
+  end
+
+  def test_removes_the_value_at_the_specified_beginning_of_the_list
+    list = LinkedList.new
+    list.append("A")
+    list.append("B")
+    list.append("C")
+    list.append("D")
+    list.remove_by_index(0)
+    assert_equal "B", list.head.data
+  end
+
+  def test_removes_the_value_at_the_specified_middle_of_the_list
+    list = LinkedList.new
+    list.append("A")
+    list.append("B")
+    list.append("C")
+    list.append("D")
+    list.remove_by_index(2)
+    assert_equal "D", list.head.next_node.next_node.data
+  end
+
+  def test_removes_the_value_at_the_specified_end_of_the_list
+    list = LinkedList.new
+    list.append("A")
+    list.append("B")
+    list.append("C")
+    list.append("D")
+    list.remove_by_index(3)
+    assert_equal "C", list.head.next_node.next_node.data
+  end
+
+  def test_does_not_remove_the_value_on_an_empty_list
+    list = LinkedList.new
+    assert_equal false, list.remove_by_index(3)
+  end
+
+  #'REMOVE_BY_VALUE' TESTS
+  def test_removes_the_first_occurrence_of_a_specificed_value
+    skip
+    list = LinkedList.new
+    list.append("A")
+    list.append("B")
+    list.append("C")
+    list.append("D")
+    list.remove_by_value("B")
+    assert_equal "C", list.head.next_node.data
+  end
+end
 

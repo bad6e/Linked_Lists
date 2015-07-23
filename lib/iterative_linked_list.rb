@@ -126,15 +126,30 @@ attr_accessor :head, :data
     counter
   end
 
-  # def remove_by_index(position)
-  #   new_node = Node.new(data)
-  #   before = @head
-  #   (position-1).times {before = before.next_node}
-  #   after = before.next_node
+  def remove_by_index(position)
+    if @head == nil
+      return false
+    end
+    if position == 0
+      current = @head
+      after = current.next_node
+      @head = after
+    else
+      before = @head
+      (position-1).times {before = before.next_node}
+      after = before.next_node.next_node
+      before.next_node = after
+    end
+  end
 
-  #   before.next_node = new_node
-  #   new_node.next_node = after
-  # end
+  def remove_by_value
+    current = @head
+    counter = 0
+    if @head != nil
+      counter += 1
+    end
+  end
+
 
 
 
@@ -152,6 +167,5 @@ end
 
 
 
-# remove_by_index removes the value at the specified index
 # remove_by_value removes the first occurrence of the specified value
 
