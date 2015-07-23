@@ -1,6 +1,5 @@
 require './lib/node'
 
-
 class LinkedList
 
 attr_accessor :head, :data
@@ -68,7 +67,6 @@ attr_accessor :head, :data
     until current.next_node.next_node == nil
         current = current.next_node
     end
-
     pop_value = current.next_node
     current.next_node = nil
     pop_value
@@ -77,7 +75,6 @@ attr_accessor :head, :data
   def count
     current = @head
     counter = 0
-
     if @head != nil
       counter += 1
       until current.next_node == nil

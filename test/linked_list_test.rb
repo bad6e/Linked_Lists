@@ -49,7 +49,6 @@ class NodeTest < Minitest::Test
     assert_equal 3, list.head.data
   end
 
-
   #'INSERT' TESTS
   def test_can_insert_node_in_empty_list
     list = LinkedList.new
@@ -122,7 +121,6 @@ class NodeTest < Minitest::Test
     list.append(4)
     results = list.pop
     assert_equal 4, results.data
-
   end
 
   def test_new_tail_is_set_once_end_value_is_popped_off
@@ -226,7 +224,6 @@ class NodeTest < Minitest::Test
     list = LinkedList.new
     assert_equal false, list.find_by_value("A")
   end
-
 
   #'REMOVE BY INDEX' TESTS
   def test_removes_the_value_at_a_specificied_index
