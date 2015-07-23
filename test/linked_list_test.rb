@@ -163,13 +163,13 @@ class NodeTest < Minitest::Test
     assert_equal 1, results
   end
 
-  def test_can_return_the_head_value_at_the_beginning_of_an_empty_list
+  def test_does_not_return_head_data_on_empty_list
     list = LinkedList.new
     results = list.head_data
     refute results
   end
 
-  #'FIND_BY_VALUE' TESTS
+  #'FIND_BY_INDEX' TESTS
   def test_can_find_the_value_at_a_numeric_position
     list = LinkedList.new
     list.append("A")
@@ -180,7 +180,63 @@ class NodeTest < Minitest::Test
     assert_equal "B", results
   end
 
+  def test_can_not_find_the_value_at_a_numeric_position_that_does_not_exist
+    list = LinkedList.new
+    list.append("A")
+    list.append("B")
+    list.append("C")
+    list.append("D")
+    assert_raises(RuntimeError) {list.find_by_index(20)}
+  end
+
+  def test_can_not_find_the_value_at_a_numeric_position_in_an_empty_list
+    list = LinkedList.new
+    assert_raises(RuntimeError) {list.find_by_index(2)}
+  end
+
+  #'FIND_BY_VALUE' TESTS
+  def test_can_find_the_position_of_the_first_occrrence_of_a_value
+    list = LinkedList.new
+    list.append("A")
+    list.append("B")
+    list.append("C")
+    list.append("D")
+    assert_equal 3, list.find_by_value("C")
+  end
+
+  def test_can_find_the_position_of_the_first_occrrence_of_a_value_diff_value
+    list = LinkedList.new
+    list.append("A")
+    list.append("B")
+    list.append("C")
+    list.append("D")
+    assert_equal 1, list.find_by_value("A")
+  end
+
+  def test_can_not_find_the_position_of_a_value_that_does_not_exist
+    list = LinkedList.new
+    list.append("A")
+    list.append("B")
+    list.append("C")
+    list.append("D")
+    assert_raises (RuntimeError) {list.find_by_value("Z")}
+  end
+
+  def test_can_not_find_the_position_of_a_value_in_an_empty_list
+    list = LinkedList.new
+    assert_equal false, list.find_by_value("A")
+  end
+
+  def test_removes_the_value_at_a_specificied_index
+    list = LinkedList.new
+    list.append("A")
+    list.append("B")
+    list.append("C")
+    list.append("D")
 
 
+
+
+  end
 end
 

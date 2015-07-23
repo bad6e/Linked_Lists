@@ -71,7 +71,7 @@ attr_accessor :head, :data
 
     pop_value = current.next_node
     current.next_node = nil
-    pop_value #This returns an object
+    pop_value
   end
 
   def count
@@ -97,10 +97,42 @@ attr_accessor :head, :data
   end
 
   def find_by_index(position)
-      current = @head
-      (position-1).times {current = current.next_node}
-      current.data
+    raise "Position doesn't exist" if position > count
+    if @head == nil
+      raise "List is empty"
+    end
+    current = @head
+    (position-1).times {current = current.next_node}
+    current.data
   end
+
+  def find_by_value(data_find)
+    if @head == nil
+      return false
+    end
+    current = @head
+    counter = 0
+    if @head != nil
+      counter += 1
+    end
+
+    while find_by_index(counter) != data_find
+      if find_by_index(counter) == nil
+        raise "Value does not exist"
+      else
+        counter += 1
+      end
+    end
+    counter
+  end
+
+  def remove_by_index
+
+  end
+
+
+
+
 end
 
 
@@ -111,8 +143,6 @@ end
 
 
 
-
-# find_by_value finds the position of the first occurrence of a value
 
 
 
