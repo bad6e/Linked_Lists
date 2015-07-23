@@ -8,7 +8,7 @@ class Node
   end
 
   def tail?
-    @data.next_node?
+    @data.next_node == nil
   end
 end
 
