@@ -226,17 +226,17 @@ class NodeTest < Minitest::Test
     list = LinkedList.new
     assert_equal false, list.find_by_value("A")
   end
-
-  def test_removes_the_value_at_a_specificied_index
-    list = LinkedList.new
-    list.append("A")
-    list.append("B")
-    list.append("C")
-    list.append("D")
-
-
-
-
-  end
 end
+
+#   #'REMOVE BY INDEX' TESTS
+#   def test_removes_the_value_at_a_specificied_index
+#     list = LinkedList.new
+#     list.append("A")
+#     list.append("B")
+#     list.append("C")
+#     list.append("D")
+#     list.remove_by_index(1)
+#     assert_equal "D", list.head.next_node.next_node.data
+#   end
+# end
 

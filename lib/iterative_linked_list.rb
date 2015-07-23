@@ -126,9 +126,15 @@ attr_accessor :head, :data
     counter
   end
 
-  def remove_by_index
+  # def remove_by_index(position)
+  #   new_node = Node.new(data)
+  #   before = @head
+  #   (position-1).times {before = before.next_node}
+  #   after = before.next_node
 
-  end
+  #   before.next_node = new_node
+  #   new_node.next_node = after
+  # end
 
 
 
