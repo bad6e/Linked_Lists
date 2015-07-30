@@ -1,4 +1,4 @@
-# Created an Implmentation of Singly Linked
+# Created an Implmentation of Singly Linked List
 
 ## It can do the following items:
 
