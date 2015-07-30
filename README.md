@@ -1,9 +1,9 @@
-Created an Implmentation of Singly Linked
+# Created an Implmentation of Singly Linked
 
-It can do the following items:
+## It can do the following items:
 
 
-*`append` an element to the end of the list
+* `append` an element to the end of the list
 * `prepend` an element at the beginning of the list
 * `insert` an element at an arbitrary position in the list
 * `includes?` gives back `true` or `false` whether the supplied value is in the list
