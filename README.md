@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Created an Implmentation of Singly Linked
+=======
+## Created an Implmentation of Singly Linked List
+>>>>>>> 48858586c504a415bf252e6dc96d04c776f3a015
 
 ## It can do the following items:
 
